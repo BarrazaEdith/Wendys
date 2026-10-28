@@ -10,19 +10,18 @@ try {
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $correo_login = $_POST['correo_login'] ?? '';
+        $password_login = $_POST['password_login'] ?? '';
 
         $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE correo = :correo");
         $stmt->execute([':correo' => $correo_login]);
         $usuario_encontrado = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($usuario_encontrado) {
-            // Si existe, redirige arriba con un mensaje de éxito verde
+        if ($usuario_encontrado && password_verify($password_login, $usuario_encontrado['password'])) {
             $nombre = $usuario_encontrado['nombre'];
             header("Location: index.php?mensaje=¡Bienvenido de nuevo, $nombre! Has iniciado sesión correctamente.&tipo=exito#Sesión");
             exit();
         } else {
-            // Si no existe, redirige arriba con un mensaje de error rojo
-            header("Location: index.php?mensaje=Correo no encontrado. No hay ninguna cuenta registrada con este correo.&tipo=error#Sesión");
+            header("Location: index.php?mensaje=Correo o contraseña incorrectos.&tipo=error#Sesión");
             exit();
         }
     }
