@@ -9,44 +9,39 @@ try {
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $correo        = $_POST['correo'] ?? '';
-        $nombre        = $_POST['nombre'] ?? '';
-        $apellido      = $_POST['apellido'] ?? '';
-        $nacimiento    = $_POST['fecha_nacimiento'] ?? '';
-        $genero        = $_POST['genero'] ?? '';
-        $codigo_postal = $_POST['codigo_postal'] ?? '';
-        $celular       = $_POST['celular'] ?? '';
+        $nombre = $_POST['nombre'] ?? '';
+        $apellido = $_POST['apellido'] ?? '';
+        $celular = $_POST['celular'] ?? '';
+        $correo = $_POST['correo'] ?? '';
+        $pass_raw = $_POST['password'] ?? '';
+        $password_hash = password_hash($pass_raw, PASSWORD_DEFAULT);
 
-        // Verificar si el correo ya existe en la base de datos
         $verificar = $conexion->prepare("SELECT COUNT(*) FROM usuarios WHERE correo = :correo");
         $verificar->execute([':correo' => $correo]);
         $existe = $verificar->fetchColumn();
 
         if ($existe > 0) {
-            echo "<h2>Error: Este correo ya está registrado.</h2>";
-            echo "<p>Ya existe una cuenta asociada a este correo. Intenta iniciar sesión.</p>";
-            echo "<br><a href='index.html#Sesión'>Regresar</a>";
+            header("Location: index.php?mensaje=Error: Este correo ya está registrado.&tipo=error#Sesión");
+            exit();
         } else {
-            // Si no existe, se guarda en la base de datos
-            $sql = "INSERT INTO usuarios (correo, nombre, apellido, fecha_nacimiento, genero, codigo_postal, celular) 
-                    VALUES (:correo, :nombre, :apellido, :nacimiento, :genero, :codigo_postal, :celular)";
+            $sql = "INSERT INTO usuarios (nombre, apellido, celular, correo, password) VALUES (:nombre, :apellido, :celular, :correo, :password)";
             
             $stmt = $conexion->prepare($sql);
             $stmt->execute([
-                ':correo' => $correo,
                 ':nombre' => $nombre,
                 ':apellido' => $apellido,
-                ':nacimiento' => $nacimiento,
-                ':genero' => $genero,
-                ':codigo_postal' => $codigo_postal,
-                ':celular' => $celular
+                ':celular' => $celular,
+                ':correo' => $correo,
+                ':password' => $password_hash
             ]);
 
-            echo "<h2>¡Registro exitoso! Tus datos se han guardado correctamente.</h2>";
-            echo "<br><a href='index.html'>Regresar al inicio</a>";
+            header("Location: index.php?mensaje=¡Registro exitoso! Ya puedes iniciar sesión.&tipo=exito#Sesión");
+            exit();
         }
     }
 } catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    $error = $e->getMessage();
+    header("Location: index.php?mensaje=Error: $error&tipo=error#Sesión");
+    exit();
 }
 ?>
