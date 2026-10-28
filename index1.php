@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pgina Wendy's</title>
+  <title>Wendy's</title>
 </head>
 <body>
 
@@ -64,7 +64,6 @@
   }
 </style>
 
-
 <?php if (isset($_GET['mensaje'])): ?>
     <script>
         window.onload = function() {
@@ -72,7 +71,6 @@
         };
     </script>
 <?php endif; ?>
-
 
 <nav style="background-color: #cc1829; color: white; padding: 1.8rem 2rem; display: flex; align-items: center; gap: 2rem;">
   <a href="index.php">MENÚ</a>
@@ -83,7 +81,6 @@
     <img src="https://cdn-icons-png.flaticon.com/512/10985/10985667.png" width="30" alt="Sesión">
   </a>
 </nav>
-
 
 <header>
   <h1>NUESTRO MENÚ</h1>
@@ -134,21 +131,19 @@
     <h4 style="color: #0C0D36;">Inicia o Crea una cuenta en</h4>
     <h4 style="color: #cc1829;">Wendy's Rewards</h4>
     
-   <h4 style="color: #0C0D36;">Si ya cuentas con cuenta ingresa tu correo electrónico:</h4>
+    <h4 style="color: #0C0D36;">Si ya cuentas con cuenta ingresa tu correo y contraseña:</h4>
     <form action="login.php" method="POST">
-      <input type="email" name="correo_login" required>
+      Correo: <input type="email" name="correo_login" required>
+      <br><br>
+      Contraseña: <input type="password" name="password_login" required>
+      <br><br>
       <button type="submit">Iniciar Sesión</button>
     </form>
 
     <br><hr><br>
 
-
     <h4 style="color: #0C0D36;">Si no cuentas con una cuenta, ingresa los siguientes datos:</h4>
     <form action="guardar.php" method="POST">
-      Ingresa tu correo:
-      <input type="email" name="correo" required>
-      <br><br>
-
       Ingresa tu nombre:
       <input type="text" name="nombre" required>
       <br><br>
@@ -157,30 +152,22 @@
       <input type="text" name="apellido" required>
       <br><br>
 
-      Fecha de nacimiento:
-      <input type="date" name="fecha_nacimiento">
-      <br><br>
-
-      Género:
-      <br>
-      <input type="radio" name="genero" value="Mujer"> Mujer <br>
-      <input type="radio" name="genero" value="Hombre"> Hombre <br>
-      <input type="radio" name="genero" value="desconocido"> Prefiero no decirlo<br>
-      <br>
-
-      Código postal:
-      <input type="text" name="codigo_postal">
-      <br><br>
-
       Número celular:
-      <input type="tel" name="celular">
+      <input type="tel" name="celular" required>
+      <br><br>
+
+      Ingresa tu correo:
+      <input type="email" name="correo" required>
+      <br><br>
+
+      Contraseña:
+      <input type="password" name="password" required>
       <br><br>
 
       <button type="submit">Registrarse</button>
     </form>
   </section>
 </center>
-
 
 <footer>
   <h3>
