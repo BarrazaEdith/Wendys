@@ -36,14 +36,7 @@
     display: block;
   }
 
-  h1 {
-    margin: 0;
-    background-color: #2e2e35;
-    color: #ffffff;
-    font-size: 2rem;
-    padding: 18px;
-    text-align: center;
-  }
+
 
   nav a {
     color: white;
