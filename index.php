@@ -73,7 +73,7 @@
 <?php endif; ?>
 
 <nav style="background-color: #cc1829; color: white; padding: 1.8rem 2rem; display: flex; align-items: center; gap: 2rem;">
-  <a href="index.php">MENÚ</a>
+  <a href="index.php">inicio</a>
   <a href="#">LO QUE VALORAMOS</a>
   <a href="#">QUIENES SOMOS</a>
   <a href="#">ENCONTRAR TRABAJOS</a>
@@ -85,7 +85,7 @@
 <header>
   <h1>NUESTRO MENÚ</h1>
 </header>
-
+<h1>¡En nuestras sucursales puedes encontrar todo este tipo de alimentos!</h1>
 <div class="cartelera">
 
   <div class="cartel">
