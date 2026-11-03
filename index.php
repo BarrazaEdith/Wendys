@@ -36,6 +36,14 @@
     display: block;
   }
 
+  h1 {
+    margin: 0;
+    background-color: #2e2e35;
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 18px;
+    text-align: center;
+  }
 
 
   nav a {
@@ -78,7 +86,7 @@
 <header>
   <h1>NUESTRO MENÚ</h1>
 </header>
-<h1>¡En nuestras sucursales puedes encontrar todo este tipo de alimentos!</h1>
+<h2>¡En nuestras sucursales puedes encontrar todo este tipo de alimentos!</h2>
 <div class="cartelera">
 
   <div class="cartel">
