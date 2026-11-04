@@ -75,18 +75,19 @@
 
 <nav style="background-color: #cc1829; color: white; padding: 1.8rem 2rem; display: flex; align-items: center; gap: 2rem;">
   <a href="index.php">inicio</a>
-  <a href="#">LO QUE VALORAMOS</a>
-  <a href="#">QUIENES SOMOS</a>
-  <a href="#">ENCONTRAR TRABAJOS</a>
+  <a href="hamburguesas.html">Hamburguesas de carne</a>
+  <a href="pollo.html">Hamburguesas de pollo</a>
+  <a href="ensaladas.html">Ensaladas</a>
+  <a href="complementos-html">Papas y complementos</a>
+  <a href="postres.html">Postres</a>
+  <a href="promociones.html">Promociones</a>
   <a href="#Sesión">
     <img src="https://cdn-icons-png.flaticon.com/512/10985/10985667.png" width="30" alt="Sesión">
   </a>
 </nav>
 
-<header>
-  <h1>NUESTRO MENÚ</h1>
-</header>
-<h2>¡En nuestras sucursales puedes encontrar todo este tipo de alimentos!</h2>
+
+<h2>¡En nuestras sucursales puedes encontrar las mejores hamburguesas!</h2>
 <div class="cartelera">
 
   <div class="cartel">
