@@ -1,4 +1,5 @@
-<?php//define que es un archivo php
+<?php
+//define que es un archivo php
 $servidor = "localhost";//servidos
 $usuario = "root";//con usuario predeterminado
 $password = "";//sin contrasena
@@ -18,16 +19,18 @@ try {
 
         if ($usuario_encontrado && password_verify($password_login, $usuario_encontrado['password'])) {//checa que el usuario exista y que la contrasena
             $nombre = $usuario_encontrado['nombre'];//sea la misma,si coincide muestra el nombre de el usuario
-            header("Location: index.php?mensaje=¡Bienvenido de nuevo, $nombre! Has iniciado sesión correctamente.&tipo=exito#Sesión");
+            $msg = urlencode("¡Bienvenido de nuevo, $nombre! Has iniciado sesión correctamente.");
+            header("Location: index.php?mensaje=$msg&tipo=exito#Sesión");
             exit();//Extrae el nombre del usuario de los datos obtenidos de la base de datos y lo guarda en una variable.
         } else {
-            header("Location: index.php?mensaje=Correo o contraseña incorrectos.&tipo=error#Sesión");
+            $msg = urlencode("Correo o contraseña incorrectos.");
+            header("Location: index.php?mensaje=$msg&tipo=error#Sesión");
             exit();//si no pudo manda el mensaje de correo o contrasena incorrecto
         }
     }
 } catch(PDOException $e) {//si llega a ocurrir un error el sistema lo atrapa
-    $error = $e->getMessage();//Extrae el texto técnico exacto del error que generó la base de datos y lo guarda en la variable
-    header("Location: index.php?mensaje=Error de conexión: $error&tipo=error#Sesión");
+    $error = urlencode("Error de conexión: " . $e->getMessage());//Extrae el texto técnico exacto del error que generó la base de datos y lo guarda en la variable
+    header("Location: index.php?mensaje=$error&tipo=error#Sesión");
     exit();//Redirige a index.php mostrando el error técnico de la base de datos como una alerta de tipo error(en la linea de arriba)
 }//exit detiene la ejecucion y la llave el catch
 ?>
