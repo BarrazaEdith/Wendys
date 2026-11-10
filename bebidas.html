@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bebidas - Wendy's</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+    nav { background-color: #cc1829; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 100; }
+    .nav-links { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+    nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    nav a:hover { color: #ffdae0; }
+    .user-icon { width: 32px; height: 32px; filter: brightness(0) invert(1); }
+    .main-title { text-align: center; font-size: 2.8rem; font-weight: 800; color: #cc1829; margin: 35px 20px 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .cartelera { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 1200px; margin: 20px auto 40px; padding: 0 20px; width: 100%; }
+    .cartel { background-color: #ffffff; border-radius: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.3s ease; border: 1px solid #f0f0f0; }
+    .cartel:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12); }
+    .cart-img-container { width: 100%; height: 180px; background-color: #fafafa; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .cart-img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .cartel h4 { font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+    .cartel p { font-size: 0.88rem; color: #666; line-height: 1.5; margin-bottom: 16px; flex-grow: 1; }
+    .btn-ver { display: inline-block; background-color: #e6f4f8; color: #006080; font-weight: 700; font-size: 0.85rem; padding: 8px 18px; border-radius: 20px; text-decoration: none; }
+    .btn-ver:hover { background-color: #006080; color: #ffffff; }
+    footer { background-color: #1f1f24; color: #a0a0a0; padding: 30px 20px; text-align: center; margin-top: auto; font-size: 0.9rem; }
+    footer h3 { color: #ffffff; font-weight: 600; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-links">
+      <a href="index.php">Inicio</a>
+      <a href="hamburguesas.html">Hamburguesas</a>
+      <a href="complementos.html">Complementos</a>
+      <a href="postres.html">Postres</a>
+      <a href="bebidas.html">Bebidas</a>
+    </div>
+    <a href="index.php#Sesión" title="Iniciar sesión">
+      <img src="https://cdn-icons-png.flaticon.com/512/10985/10985667.png" alt="Sesión" class="user-icon">
+    </a>
+  </nav>
+
+  <h1 class="main-title">Bebidas Refrescantes</h1>
+
+  <div class="cartelera">
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im33.png" alt="Coca-Cola Clásica" class="cart-img"></div>
+      <h4>Coca-Cola Clásica</h4>
+      <p>Refresco de cola bien frío servido con hielo al instante.</p>
+      $35.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+ 
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im33.png" alt="Coca-Cola Sin Azúcar" class="cart-img"></div>
+      <h4>Coca-Cola Sin Azúcar</h4>
+      <p>Todo el sabor icónico sin calorías ni azúcar añadida.</p>
+      $35.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+ 
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im34.png" alt="Sprite" class="cart-img"></div>
+      <h4>Sprite</h4>
+      <p>Bebida carbonatada transparente con refrescante sabor lima-limón.</p>
+      $35.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+  
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im35.png" alt="Fanta Naranja" class="cart-img"></div>
+      <h4>Fanta Naranja</h4>
+      <p>Refresco sabor naranja burbujeante y dulce.</p>
+      $35.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+   
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im36.png" alt="Limonada Natural" class="cart-img"></div>
+      <h4>Limonada Natural Dave's</h4>
+      <p>Limonada hecha en casa con limones frescos y toque exacto de azúcar.</p>
+      $42.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+ 
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im37.png" alt="Limonada de Fresa" class="cart-img"></div>
+      <h4>Limonada con Fresa</h4>
+      <p>Nuestra limonada clásica combinada con puré de fresas naturales.</p>
+      $48.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im38.png" alt="Té Helado Dulce" class="cart-img"></div>
+      <h4>Té Helado (Sweet Tea)</h4>
+      <p>Té negro infusionado al momento servido frío con hielo.</p>
+      $38.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+ 
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im39.png" alt="Agua Embotellada" class="cart-img"></div>
+      <h4>Agua Purificada</h4>
+      <p>Botella de agua purificada de manantial (600 ml).</p>
+      $25.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im40.png" alt="Café Caliente" class="cart-img"></div>
+      <h4>Café Americano Caliente</h4>
+      <p>Café de grano 100% arábica recién preparado.</p>
+      $32.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im41.png" alt="Jugo de Manzana" class="cart-img"></div>
+      <h4>Jugo de Manzana</h4>
+      <p>Jugo 100% natural de manzana en cajita ideal para acompañar.</p>
+      $30.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+  </div>
+
+  <footer>
+    <h3>Edith Jimena Barraza Reyes</h3>
+    <p>5-J | Programación</p>
+  </footer>
+</body>
+</html>
