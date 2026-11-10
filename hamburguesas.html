@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hamburguesas</title>
+  <!-- Importación de fuente moderna desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .main-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #cc1829;
+  margin: 30px 20px 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navegación */
+    nav {
+      background-color: #cc1829;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      color: #ffdae0;
+      transform: translateY(-1px);
+    }
+
+    .user-icon {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+      transition: opacity 0.2s ease;
+    }
+
+    .user-icon:hover {
+      opacity: 0.8;
+    }
+
+    /* Títulos de Sección */
+    .section-title {
+      max-width: 1200px;
+      margin: 40px auto 10px;
+      padding: 0 20px;
+      width: 100%;
+      color: #0C0D36;
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      scroll-margin-top: 90px; /* Para que al navegar no lo tape la barra superior */
+    }
+
+    .section-title::after {
+      content: '';
+      flex-grow: 1;
+      height: 2px;
+      background-color: #e0e0e0;
+      border-radius: 2px;
+    }
+
+    /* Contenedor de Hamburguesas */
+    .cartelera {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 15px auto 40px;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    /* Tarjetas (Carteles) */
+    .cartel {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #f0f0f0;
+    }
+
+    .cartel:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .cart-img-container {
+      width: 100%;
+      height: 180px;
+      background-color: #fafafa;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .cart-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .cartel:hover .cart-img {
+      transform: scale(1.05);
+    }
+
+    .cartel h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .cartel p {
+      font-size: 0.88rem;
+      color: #666666;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .btn-ver {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 180px; /* Define un ancho fijo igual para todos */
+  text-align: center; /* Asegura que el texto quede centrado dentro del ancho fijo */
+  background-color: #e6f4f8;
+  color: #006080;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 0; /* Solo padding vertical; el horizontal lo controla el width */
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-ver:hover {
+  background-color: #006080;
+  color: #ffffff;
+}
+
+    /* Footer */
+    footer {
+      background-color: #1f1f24;
+      color: #a0a0a0;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: auto;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    footer h3 {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-links">
+      <a href="index.php">Inicio</a>
+      <a href="hamburguesas.html">Hamburguesas </a>
+      <a href="complementos.html">Complementos</a>
+      <a href="postres.html">Postres</a>
+      <a href="bebidas.html">Bebidas</a>
+    </div>
+    <a href="#Sesión" title="Iniciar sesión">
+      <img src="im1.png" alt="Sesión" class="user-icon">
+    </a>
+  </nav>
+  <h1 class="main-title">Hamburguesas</h1>
+
+  <h2 class="section-title" id="carne"> Hamburguesas de Res</h2>
+
+  <div class="cartelera">
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im12.png" alt="Dave's Sencilla" class="cart-img">
+      </div>
+      <h4>Dave's Sencilla</h4>
+      <p>Un cuarto de libra de carne de res fresca, queso americano, lechuga fresca, tomate, pepinillos encurtidos, ketchup y mayonesa.</p>
+      <span class="precio">$119.00</span>
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+    
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im2.png" alt="Dave's Doble" class="cart-img">
+      </div>
+      <h4>Dave's Doble</h4>
+      <p>Dos piezas de carne de res fresca, doble queso americano, lechuga, tomate y pepinillos en pan tostado.</p>
+      $149.00 
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im3.png" alt="Dave's Triple" class="cart-img">
+      </div>
+      <h4>Dave's Triple</h4>
+      <p>Tres porciones de carne de res fresca con triple queso americano, vegetales frescos y aderezos clásicos.</p>
+      $179.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im4.png" alt="Big Bacon Clásica" class="cart-img">
+      </div>
+      <h4>Big Bacon Clásica</h4>
+      <p>Carne de res con tocino crujiente de corte grueso, queso americano, lechuga, tomate y mayonesa.</p>
+      $139.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im5.png" alt="Baconator" class="cart-img">
+      </div>
+      <h4>Baconator</h4>
+      <p>Dos hamburguesas de res, seis tiras de tocino ahumado, queso americano, ketchup y mayonesa.</p>
+      $169.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im6.png" alt="Son of Baconator" class="cart-img">
+      </div>
+      <h4>Son of Baconator</h4>
+      <p>La versión compacta del clásico: dos hamburguesas pequeñas con tocino y queso americano.</p>
+      $129.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im7.png" alt="Bacon Jalapeño Melt" class="cart-img">
+      </div>
+      <h4>Bacon Jalapeño Melt</h4>
+      <p>Carne de res con rodajas de jalapeño, tocino, queso derretido y una deliciosa salsa picante suave.</p>
+      $145.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+  </div>
+
+
+  <h2 class="section-title" id="pollo"> Hamburguesas de Pollo</h2>
+
+  <div class="cartelera">
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im8.png" alt="Classic Chicken Sandwich" class="cart-img">
+      </div>
+      <h4>Classic Chicken</h4>
+      <p>Pechuga de pollo crujiente empanizada, lechuga fresca, tomate y mayonesa en un pan de brioche suave.</p>
+      $125.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im9.png" alt="Spicy Chicken Sandwich" class="cart-img">
+      </div>
+      <h4>Spicy Chicken</h4>
+      <p>Pechuga de pollo sazonada con nuestra mezcla secreta de especias picantes, lechuga, tomate y mayonesa.</p>
+      $129.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im10.png" alt="Asiago Ranch Chicken" class="cart-img">
+      </div>
+      <h4>Asiago Ranch Chicken</h4>
+      <p>Pollo empanizado o a la parrilla con queso Asiago, tocino de corte grueso, aderezo Ranch y vegetales.</p>
+      $145.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+
+    <div class="cartel">
+      <div class="cart-img-container">
+        <img src="im11.png" alt="Crispy Chicken" class="cart-img">
+      </div>
+      <h4>Crispy Chicken Sandwich</h4>
+      <p>Filete de pollo crujiente dorado a la perfección con pepinillos y mayonesa en pan tradicional.</p>
+      $79.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+  </div>
+
+  
+
+  <footer>
+    <h3>Edith Jimena Barraza Reyes</h3>
+    <p>5-J | Programación</p>
+  </footer>
+
+</body>
+</html>
