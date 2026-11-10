@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complementos - Wendy's</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+    nav { background-color: #cc1829; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 100; }
+    .nav-links { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+    nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    nav a:hover { color: #ffdae0; }
+    .user-icon { width: 32px; height: 32px; filter: brightness(0) invert(1); }
+    .main-title { text-align: center; font-size: 2.8rem; font-weight: 800; color: #cc1829; margin: 35px 20px 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .cartelera { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 1200px; margin: 20px auto 40px; padding: 0 20px; width: 100%; }
+    .cartel { background-color: #ffffff; border-radius: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.3s ease; border: 1px solid #f0f0f0; }
+    .cartel:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12); }
+    .cart-img-container { width: 100%; height: 180px; background-color: #fafafa; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .cart-img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .cartel h4 { font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+    .cartel p { font-size: 0.88rem; color: #666; line-height: 1.5; margin-bottom: 16px; flex-grow: 1; }
+    .btn-ver { display: inline-block; background-color: #e6f4f8; color: #006080; font-weight: 700; font-size: 0.85rem; padding: 8px 18px; border-radius: 20px; text-decoration: none; }
+    .btn-ver:hover { background-color: #006080; color: #ffffff; }
+    footer { background-color: #1f1f24; color: #a0a0a0; padding: 30px 20px; text-align: center; margin-top: auto; font-size: 0.9rem; }
+    footer h3 { color: #ffffff; font-weight: 600; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-links">
+      <a href="index.php">Inicio</a>
+      <a href="hamburguesas.html">Hamburguesas</a>
+      <a href="complementos.html">Complementos</a>
+      <a href="postres.html">Postres</a>
+      <a href="bebidas.html">Bebidas</a>
+    </div>
+    <a href="index.php#Sesión" title="Iniciar sesión">
+      <img src="https://cdn-icons-png.flaticon.com/512/10985/10985667.png" alt="Sesión" class="user-icon">
+    </a>
+  </nav>
+
+  <h1 class="main-title">Papas y Complementos</h1>
+
+  <div class="cartelera">
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im13.png" alt="Papas Fritas Clásicas" class="cart-img"></div>
+      <h4>Papas Fritas Clásicas</h4>
+      <p>Corte natural con piel, doradas a la perfección y sazonadas con sal de mar.</p>
+      $49.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im14.png" alt="Baconator Fries" class="cart-img"></div>
+      <h4>Baconator Fries</h4>
+      <p>Papas fritas cubiertas con queso cheddar derretido y tocino crujiente picado.</p>
+      $79.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+ 
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im15.png" alt="Chili Cheese Fries" class="cart-img"></div>
+      <h4>Chili Cheese Fries</h4>
+      <p>Papas doradas bañadas con nuestro famoso Chili de res y queso cheddar rallado.</p>
+      $75.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+ 
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im16.png" alt="Chili Original" class="cart-img"></div>
+      <h4>Chili de Res Original</h4>
+      <p>Nuestra receta icónica con carne picada, frijoles, jitomate y especias.</p>
+      $69.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im17.png" alt="Nuggets 4 Piezas" class="cart-img"></div>
+      <h4>Nuggets (4 Piezas)</h4>
+      <p>Bocados de pechuga de pollo empanizados y crujientes con tu salsa favorita.</p>
+      $45.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im18.png" alt="Spicy Nuggets" class="cart-img"></div>
+      <h4>Spicy Nuggets (6 Piezas)</h4>
+      <p>Nuggets de pollo empanizados con una mezcla secreta de chiles picantes.</p>
+      $65.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im19.png" alt="Papa Asada con Queso y Tocino" class="cart-img"></div>
+      <h4>Papa Asada Queso y Tocino</h4>
+      <p>Papa horneada entera abierta al medio con queso cheddar caliente y tocino.</p>
+      $69.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im20.png" alt="Papa Asada con Crema y Cebollín" class="cart-img"></div>
+      <h4>Papa Asada Sour Cream</h4>
+      <p>Papa horneada servida caliente con mantequilla, crema ácida y cebollín fresco.</p>
+      $59.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im21.png" alt="Ensalada Caesar Individual" class="cart-img"></div>
+      <h4>Side Caesar Salad</h4>
+      <p>Lechuga romana fresca, crotones crujientes, queso parmesano y aderezo Caesar.</p>
+      $55.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+
+    </div>
+    <div class="cartel">
+      <div class="cart-img-container"><img src="im22.png" alt="Aros de Cebolla" class="cart-img"></div>
+      <h4>Aros de Cebolla</h4>
+      <p>Crujientes aros de cebolla rebozados doraditos, ideales para acompañar.</p>
+      $59.00
+      <button type="button" class="btn-ver">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <footer>
+    <h3>Edith Jimena Barraza Reyes</h3>
+    <p>5-J | Programación</p>
+  </footer>
+</body>
+</html>
